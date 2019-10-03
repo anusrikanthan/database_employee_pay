@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    tools:context=".Register">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/roboto_black"
+        android:text="Create\nAccount."
+        android:textColor="@android:color/background_light"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:onClick="goBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bacckbutt" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="520dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:text="Name"
+                android:textColor="@android:color/background_light" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:ems="15"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/background_light" />
+
+            <TextView
+                android:id="@+id/textVew20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:text="E-mail"
+                android:textColor="@android:color/background_light" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:ems="15"
+                android:inputType="textEmailAddress"
+                android:textColor="@android:color/background_light" />
+
+            <TextView
+                android:id="@+id/fv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:text=" Date of birth"
+                android:textColor="@android:color/background_light" />
+
+            <EditText
+                android:id="@+id/dob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:ems="15"
+                android:inputType="date"
+                android:textColor="@android:color/background_light" />
+
+            <TextView
+                android:id="@+id/ph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:text="Phone"
+                android:textColor="@android:color/background_light" />
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:ems="15"
+                android:inputType="numberDecimal"
+                android:textColor="@android:color/background_light" />
+
+            <TextView
+                android:id="@+id/designation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:text="Designation"
+                android:textColor="@android:color/background_light" />
+
+            <EditText
+                android:id="@+id/desig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:ems="15"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/background_light" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:text="Join date"
+                android:textColor="@android:color/background_light" />
+
+            <EditText
+                android:id="@+id/joinDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:ems="15"
+                android:inputType="date"
+                android:textColor="@android:color/background_light" />
+
+            <TextView
+                android:id="@+id/textVaiew20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:text="Interpersonal Skills"
+                android:textColor="@android:color/background_light" />
+
+            <EditText
+                android:id="@+id/inter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:ems="15"
+                android:inputType="text"
+                android:textColor="@android:color/background_light" />
+
+            <TextView
+                android:id="@+id/textViaew20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:text="Achievements"
+                android:textColor="@android:color/background_light" />
+
+            <EditText
+                android:id="@+id/achieve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:ems="15"
+                android:inputType="text"
+                android:textColor="@android:color/background_light" />
+
+            <TextView
+                android:id="@+id/textVipew20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:text="Employee Number"
+                android:textColor="@android:color/background_light" />
+
+            <EditText
+                android:id="@+id/empno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:ems="15"
+                android:inputType="date"
+                android:textColor="@android:color/background_light" />
+
+            <TextView
+                android:id="@+id/textViewl20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:text="Password"
+                android:textColor="@android:color/background_light" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@android:color/background_light"
+                android:ems="15"
+                android:inputType="textPassword"
+                android:textColor="@android:color/background_light" />
+            <TextView
+                android:id="@+id/reee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="47dp"
+                android:layout_marginTop="5dp"
+                android:text="Are you a manager?"
+                android:textColor="@android:color/background_light" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <RadioButton
+                        android:id="@+id/yesbut"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="48dp"
+                        android:layout_marginTop="5dp"
+                        android:backgroundTint="@android:color/background_light"
+                        android:buttonTint="@android:color/background_light"
+                        android:text="Yes"
+                        android:textColor="@android:color/background_light" />
+
+                    <RadioButton
+                        android:id="@+id/nobut"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="48dp"
+                        android:layout_marginBottom="10dp"
+                        android:buttonTint="@android:color/background_light"
+                        android:text="No"
+                        android:textColor="@android:color/background_light" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="10dp"
+                android:onClick="signbuttonpressed"
+                app:srcCompat="@drawable/signbut" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

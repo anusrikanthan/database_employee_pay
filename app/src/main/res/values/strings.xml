@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Pay</string>
+    <string name="title_employee_list">Employees</string>
+    <string name="title_employee_detail">Employee Detail</string>
+</resources>
