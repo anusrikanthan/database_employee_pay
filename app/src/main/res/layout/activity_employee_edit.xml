@@ -172,14 +172,16 @@
                     android:textColor="@color/headings"
                     android:text="Join Date"
                     android:textSize="13sp"/>
+
                 <EditText
                     android:id="@+id/joindate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Join Date goes here"
-                    android:textSize="14sp"
                     android:ems="14"
-                    android:fontFamily="sans-serif-light"/>
+                    android:fontFamily="sans-serif-light"
+                    android:inputType="date"
+                    android:text="1/1/1999"
+                    android:textSize="14sp" />
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
@@ -195,14 +197,16 @@
                     android:textColor="@color/headings"
                     android:text="Date Of Birth"
                     android:textSize="13sp"/>
+
                 <EditText
                     android:id="@+id/dob"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="DOB goes here"
-                    android:textSize="14sp"
                     android:ems="14"
-                    android:fontFamily="sans-serif-light"/>
+                    android:fontFamily="sans-serif-light"
+                    android:inputType="date"
+                    android:text="1/1/1999"
+                    android:textSize="14sp" />
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
@@ -218,14 +222,16 @@
                     android:textColor="@color/headings"
                     android:text="Phone"
                     android:textSize="13sp"/>
+
                 <EditText
+                    android:id="@+id/phonenumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Phone no goes here"
-                    android:id="@+id/phonenumber"
-                    android:textSize="14sp"
                     android:ems="14"
-                    android:fontFamily="sans-serif-light"/>
+                    android:fontFamily="sans-serif-light"
+                    android:inputType="number"
+                    android:text="9999999999"
+                    android:textSize="14sp" />
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="4dp"

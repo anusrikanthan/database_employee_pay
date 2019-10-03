@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,12 +27,46 @@ import java.util.List;
 
 public class Employees extends AppCompatActivity implements MyItemClickListener {
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id){
+            case R.id.show_profile:
+                Toast.makeText(getApplicationContext(),"Here is your profile",Toast.LENGTH_LONG).show();
+
+                //GET EMPLOYER INFO AND SEND IT HERE
+
+                Intent i = new Intent(Employees.this,employee_profile.class);
+                startActivity(i);
+                return true;
+            case R.id.show_logout:
+                Toast.makeText(getApplicationContext(),"Logging out...",Toast.LENGTH_LONG).show();
+                Intent x = new Intent(Employees.this,MainActivity.class);
+                startActivity(x);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     public  ArrayList<EmpClass> mData,employees;
     @Override
     public void onItemClick(View view, int postion) {
         EmpClass bean = employees.get(postion);
         if(bean != null){
+
+            //Start Employee Profile Activity Here
+
             Toast.makeText(this, bean.name, Toast.LENGTH_SHORT).show();
+
+            Intent i = new Intent(Employees.this,appraisalRating.class);
+            startActivity(i);
         }
     }
     RecyclerView rv;

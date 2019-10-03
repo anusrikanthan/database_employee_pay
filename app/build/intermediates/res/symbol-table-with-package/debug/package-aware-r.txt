@@ -1031,11 +1031,13 @@ drawable grad
 drawable i1
 drawable ic_check_black_24dp
 drawable ic_edit_black_24dp
+drawable ic_exit
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_person_black
 drawable ic_person_black_24dp
 drawable ic_person_white_24dp
 drawable ic_settings_black_24dp
@@ -1091,6 +1093,7 @@ id add
 id alertTitle
 id all
 id always
+id appraisal
 id async
 id auto
 id back
@@ -1131,6 +1134,7 @@ id disableHome
 id dob
 id editText
 id editText2
+id editTextDialogUserInput
 id edit_query
 id email
 id empno
@@ -1171,6 +1175,7 @@ id joinDate
 id joindate
 id labeled
 id largeLabel
+id layout_root
 id left
 id line1
 id line3
@@ -1245,6 +1250,8 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id show_logout
+id show_profile
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -1276,6 +1283,7 @@ id textVaiew20
 id textVew20
 id textViaew20
 id textView
+id textView1
 id textView19
 id textView2
 id textView20
@@ -1361,6 +1369,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_appraisal_rating
 layout activity_employee_edit
 layout activity_employee_profile
 layout activity_employees
@@ -1398,11 +1407,13 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout prompts
 layout rough
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap pic
