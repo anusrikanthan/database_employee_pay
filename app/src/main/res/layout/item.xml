@@ -46,6 +46,14 @@
                 android:layout_toRightOf="@+id/person_photo"
                 android:layout_below="@+id/person_name"
                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/person_number"
+                android:text="employ no"
+                android:layout_toRightOf="@+id/person_photo"
+                android:layout_below="@+id/person_designation"
+                />
 
 
         </RelativeLayout>

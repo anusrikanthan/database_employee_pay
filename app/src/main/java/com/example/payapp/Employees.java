@@ -22,6 +22,9 @@ import android.widget.Toast;
 
 import com.example.payapp.EmpClass;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,9 +42,7 @@ public class Employees extends AppCompatActivity implements MyItemClickListener 
         switch (id){
             case R.id.show_profile:
                 Toast.makeText(getApplicationContext(),"Here is your profile",Toast.LENGTH_LONG).show();
-
                 //GET EMPLOYER INFO AND SEND IT HERE
-
                 Intent i = new Intent(Employees.this,employee_profile.class);
                 startActivity(i);
                 return true;
@@ -56,19 +57,6 @@ public class Employees extends AppCompatActivity implements MyItemClickListener 
     }
 
     public  ArrayList<EmpClass> mData,employees;
-    @Override
-    public void onItemClick(View view, int postion) {
-        EmpClass bean = employees.get(postion);
-        if(bean != null){
-
-            //Start Employee Profile Activity Here
-
-            Toast.makeText(this, bean.name, Toast.LENGTH_SHORT).show();
-
-            Intent i = new Intent(Employees.this,appraisalRating.class);
-            startActivity(i);
-        }
-    }
     RecyclerView rv;
     LinearLayoutManager llm;
 
@@ -89,8 +77,20 @@ public class Employees extends AppCompatActivity implements MyItemClickListener 
         rv.setAdapter(adapter);
     }
 
-}
+    @Override
+    public void onItemClick(View view, int postion) {
+        EmpClass bean = employees.get(postion);
+        if(bean != null){
 
+            //Start Employee Profile Activity Here
+
+            Toast.makeText(this, bean.name, Toast.LENGTH_SHORT).show();
+
+            Intent i = new Intent(Employees.this,appraisalRating.class);
+            startActivity(i);
+        }
+    }
+}
 
 class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>  {
 
@@ -117,6 +117,8 @@ class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>  {
     public void onBindViewHolder(PersonViewHolder personViewHolder, int i) {
         personViewHolder.personName.setText(employees.get(i).name);
         personViewHolder.personAge.setText(employees.get(i).designation);
+        String temp = String.valueOf(employees.get(i).empNo);
+        personViewHolder.empNoo.setText(temp);
 //        personViewHolder.personPhoto.setImageResource(employees.get(i).photoId);
     }
 
@@ -130,7 +132,7 @@ class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>  {
     public static class PersonViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         CardView cv;
         TextView personName;
-        TextView personAge,empNo;
+        TextView personAge,empNoo;
         ImageView personPhoto;
         private MyItemClickListener mListener;
 
@@ -140,7 +142,7 @@ class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>  {
             personName = (TextView)itemView.findViewById(R.id.person_name);
             personAge = (TextView)itemView.findViewById(R.id.person_designation);
             personPhoto = (ImageView)itemView.findViewById(R.id.person_photo);
-            empNo = (TextView) itemView.findViewById(R.id.empno);
+            empNoo = (TextView) itemView.findViewById(R.id.person_number);
             this.mListener = listener;
             itemView.setOnClickListener(this);
         }

@@ -1210,6 +1210,7 @@ id password
 id percent
 id person_designation
 id person_name
+id person_number
 id person_photo
 id ph
 id phone

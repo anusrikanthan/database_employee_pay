@@ -254,6 +254,8 @@
                 android:ems="15"
                 android:inputType="textPassword"
                 android:textColor="@android:color/background_light" />
+
+
             <TextView
                 android:id="@+id/reee"
                 android:layout_width="match_parent"
