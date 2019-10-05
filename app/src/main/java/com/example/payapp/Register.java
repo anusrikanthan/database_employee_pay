@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -33,9 +34,9 @@ import android.widget.Toast;
 public class Register extends AppCompatActivity {
 
     SQLiteDatabase db;
-    public EditText phone, email, dob, name, designation, joinDate, achievements,empNo,password,interpersonal;
-    public String manager;
+    public EditText phone, email, dob, name, designation, joen, achievements,empNo,password,interpersonal;
     RadioButton yes,no;
+    RadioGroup rg;
     EmpClass e;
     int flag1=0;
     int flag2=0;
@@ -46,7 +47,7 @@ public class Register extends AppCompatActivity {
         getSupportActionBar().hide();
 
         db = openOrCreateDatabase("Employee", Context.MODE_PRIVATE, null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS employee(name VARCHAR,emp_id INTEGER,password VARCHAR,employer INTEGER,email VARCHAR,phone VARCHAR,joindate DATE, dob DATE, interpersonal_skills VARCHAR, achievements VARCHAR,rank INTEGER, rating INTEGER,pay INTEGER);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS employee(name VARCHAR,designation VARCHAR,emp_id INTEGER,password VARCHAR,employer INTEGER,email VARCHAR,phone VARCHAR,joindate DATE, dob DATE, interpersonal_skills VARCHAR, achievements VARCHAR,rank INTEGER, rating INTEGER,pay INTEGER);");
     }
     public void signbuttonpressed(View view) {
         phone = findViewById(R.id.phone);
@@ -54,19 +55,14 @@ public class Register extends AppCompatActivity {
         dob = findViewById(R.id.dob);
         name = findViewById(R.id.name);
         designation = findViewById(R.id.desig);
-        joinDate = findViewById(R.id.joindate);
+        joen = findViewById(R.id.joinnate);
         achievements = findViewById(R.id.achieve);
 //        manager = findViewById(R.id.manager);
         password = findViewById(R.id.password);
         interpersonal = findViewById(R.id.inter);
         empNo = findViewById(R.id.empno);
         yes = findViewById(R.id.yesbut); no = findViewById(R.id.nobut);
-        if(yes.isChecked()) {
-            manager = "Yes";
-        }
-        else if(no.isChecked()) {
-            manager = "No";
-        }
+        rg = findViewById(R.id.radiogroup);
 
         //NEW ENTRY REQUIRED IN DATABASE
         e = new EmpClass();
@@ -75,15 +71,18 @@ public class Register extends AppCompatActivity {
         e.dob = dob.getText().toString();
         e.name = name.getText().toString();
         e.designation = designation.getText().toString();
-//        e.joinDate = joinDate.getText().toString();
+        e.joinDate = joen.getText().toString();
         e.achievements = achievements.getText().toString();
         e.password = password.getText().toString();
         e.interpersonalSkill = interpersonal.getText().toString();
         e.empNo = Integer.parseInt(empNo.getText().toString());
-        if(manager.equals("yes"))
+        e.employer = 0;
+        if(yes.isChecked()) {
             e.employer = 1;
-        else
+        }
+        else {
             e.employer = -1;
+        }
         e.pay = -1;
         e.rating = 0;       //Rating on a scale of 1 to n, 0 means unrated
         e.rank = -2;
@@ -102,12 +101,21 @@ public class Register extends AppCompatActivity {
 //                }
 //            }
 //        }).start();
-
-        db.execSQL("INSERT INTO employee VALUES('" + e.name + "','" + e.empNo +"','" + e.password + "','" + e.employer + "','" + e.email + "','" + e.phone + "','" + e.joinDate + "','" + e.dob + "','" + e.interpersonalSkill + "','" + e.achievements + "','" + e.rank + "','" + e.rating + "','" + e.pay + "');");
-        Toast.makeText(this, "Registration Successful!", Toast.LENGTH_SHORT).show();
-        //        clearText();
-        Intent i = new Intent(Register.this,MainActivity.class);
-        startActivity(i);
+        if(phone.getText().toString().trim().length()==0 ||
+                email.getText().toString().trim().length()==0 || achievements.getText().toString().trim().length()==0 ||
+                dob.getText().toString().trim().length()==0 || password.getText().toString().trim().length()==0 ||
+                name.getText().toString().trim().length()==0 || interpersonal.getText().toString().trim().length()==0 ||
+                designation.getText().toString().trim().length()==0 || empNo.getText().toString().trim().length()==0 ||
+                joen.getText().toString().trim().length()==0 || e.employer ==0) {
+            Toast.makeText(this, "You have not entered all details! Please re-check", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            db.execSQL("INSERT INTO employee VALUES('" + e.name + "','" + e.designation + "','" + e.empNo +"','" + e.password + "','" + e.employer + "','" + e.email + "','" + e.phone + "','" + e.joinDate + "','" + e.dob + "','" + e.interpersonalSkill + "','" + e.achievements + "','" + e.rank + "','" + e.rating + "','" + e.pay + "');");
+            Toast.makeText(this, "Registration Successful!", Toast.LENGTH_SHORT).show();
+            //        clearText();
+            Intent i = new Intent(Register.this,MainActivity.class);
+            startActivity(i);
+        }
     }
     public void goBack(View view) {
         Intent i = new Intent(Register.this,MainActivity.class);

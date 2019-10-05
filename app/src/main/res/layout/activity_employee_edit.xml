@@ -57,16 +57,17 @@
             android:textColor="@color/address"
             />
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_marginTop="1dp"
             android:layout_marginRight="25dp"
-            android:adjustViewBounds="true"
+            android:background="#00000000"
+            android:elevation="4dp"
             android:onClick="edit"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_check_black_24dp"></ImageView>
+            android:src="@drawable/ic_check_black_24dp"></ImageButton>
 
     </RelativeLayout>
 
@@ -134,7 +135,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:text="email"
-                    android:ems="10"
+                    android:ems="14"
                     android:textColor="@android:color/white"
                     android:textSize="10sp" />
 
@@ -177,7 +178,7 @@
                     android:id="@+id/joindate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="14"
+                    android:ems="25"
                     android:fontFamily="sans-serif-light"
                     android:inputType="date"
                     android:text="1/1/1999"
@@ -202,7 +203,7 @@
                     android:id="@+id/dob"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="14"
+                    android:ems="25"
                     android:fontFamily="sans-serif-light"
                     android:inputType="date"
                     android:text="1/1/1999"
@@ -227,7 +228,7 @@
                     android:id="@+id/phonenumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="14"
+                    android:ems="25"
                     android:fontFamily="sans-serif-light"
                     android:inputType="number"
                     android:text="9999999999"
@@ -253,7 +254,7 @@
                     android:text="Achievements go here"
                     android:id="@+id/achieve"
                     android:textSize="14sp"
-                    android:ems="14"
+                    android:ems="25"
                     android:fontFamily="sans-serif-light"/>
                 <View
                     android:layout_width="match_parent"
@@ -276,7 +277,7 @@
                     android:id="@+id/inter"
                     android:text="Interpersonal skills go here"
                     android:textSize="14sp"
-                    android:ems="14"
+                    android:ems="25"
                     android:fontFamily="sans-serif-light"/>
                 <View
                     android:layout_width="match_parent"
@@ -291,15 +292,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/headings"
-                    android:text="Manager"
+                    android:text="Password"
                     android:textSize="13sp"/>
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/manager"
-                    android:text="Manager goes here"
+                    android:id="@+id/passwordfield"
                     android:textSize="14sp"
-                    android:ems="14"
+                    android:inputType="textPassword"
+                    android:ems="25"
                     android:fontFamily="sans-serif-light"/>
                 <View
                     android:layout_width="match_parent"

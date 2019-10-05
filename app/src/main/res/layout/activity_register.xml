@@ -165,7 +165,7 @@
                 android:textColor="@android:color/background_light" />
 
             <EditText
-                android:id="@+id/joinDate"
+                android:id="@+id/joinnate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="47dp"
@@ -271,6 +271,7 @@
 
                 <RadioGroup
                     android:layout_width="match_parent"
+                    android:id="@+id/radiogroup"
                     android:layout_height="match_parent" >
 
                     <RadioButton

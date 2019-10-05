@@ -1171,8 +1171,8 @@ id inter
 id invisible
 id italic
 id item_touch_helper_previous_elevation
-id joinDate
 id joindate
+id joinnate
 id labeled
 id largeLabel
 id layout_root
@@ -1207,6 +1207,9 @@ id parent
 id parentPanel
 id parent_matrix
 id password
+id passwordfield
+id payfield
+id payxx
 id percent
 id person_designation
 id person_name
@@ -1219,6 +1222,7 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
+id radiogroup
 id reee
 id rellay1
 id right

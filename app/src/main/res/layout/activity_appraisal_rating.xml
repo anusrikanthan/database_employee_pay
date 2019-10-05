@@ -103,7 +103,7 @@
         <RelativeLayout
             android:id="@+id/xxx"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="53dp"
             android:background="@color/followingBg"
             android:layout_gravity="center"
             android:layout_weight="1"
@@ -124,7 +124,7 @@
                     android:fontFamily="sans-serif-light"
                     android:text="email"
                     android:textColor="@android:color/white"
-                    android:textSize="25sp" />
+                    android:textSize="10sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -309,6 +309,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/manager"
+                    android:text="Manager goes here"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-light"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="12dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/headings"
+                    android:text="Pay"
+                    android:textSize="13sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/payfield"
                     android:text="Manager goes here"
                     android:textSize="18sp"
                     android:fontFamily="sans-serif-light"/>

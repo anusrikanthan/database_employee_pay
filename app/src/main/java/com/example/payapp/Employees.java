@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -30,6 +31,10 @@ import java.util.List;
 
 public class Employees extends AppCompatActivity implements MyItemClickListener {
 
+    String emp_nooo;
+    Bundle b;
+    SQLiteDatabase db;
+
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -38,17 +43,21 @@ public class Employees extends AppCompatActivity implements MyItemClickListener 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        b = getIntent().getExtras();
         int id = item.getItemId();
         switch (id){
             case R.id.show_profile:
-                Toast.makeText(getApplicationContext(),"Here is your profile",Toast.LENGTH_LONG).show();
                 //GET EMPLOYER INFO AND SEND IT HERE
                 Intent i = new Intent(Employees.this,employee_profile.class);
+                emp_nooo = b.getString("reg_emp_id");
+                Toast.makeText(this, emp_nooo, Toast.LENGTH_SHORT).show();
+                i.putExtra("reg_emp_id",emp_nooo);
                 startActivity(i);
                 return true;
             case R.id.show_logout:
                 Toast.makeText(getApplicationContext(),"Logging out...",Toast.LENGTH_LONG).show();
                 Intent x = new Intent(Employees.this,MainActivity.class);
+                x.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(x);
                 return true;
             default:
@@ -56,7 +65,8 @@ public class Employees extends AppCompatActivity implements MyItemClickListener 
         }
     }
 
-    public  ArrayList<EmpClass> mData,employees;
+    public  ArrayList<EmpClass> employees;
+    EmpClass e;
     RecyclerView rv;
     LinearLayoutManager llm;
 
@@ -64,14 +74,55 @@ public class Employees extends AppCompatActivity implements MyItemClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employees);
+
+        db = openOrCreateDatabase("Employee", Context.MODE_PRIVATE, null);
+        db.execSQL("CREATE TABLE IF NOT EXISTS employee(name VARCHAR,designation VARCHAR,emp_id INTEGER,password VARCHAR,employer INTEGER,email VARCHAR,phone VARCHAR,joindate DATE, dob DATE, interpersonal_skills VARCHAR, achievements VARCHAR,rank INTEGER, rating INTEGER,pay INTEGER);");
+
         rv  = (RecyclerView) findViewById(R.id.rv);
         llm= new LinearLayoutManager(this);
         rv.setHasFixedSize(true);
         rv.setLayoutManager(llm);
         employees = new ArrayList<EmpClass>();
-        employees.add(new EmpClass("Ajay","CEO",1));
-        employees.add(new EmpClass("Rahul","Marketing",2));
-        employees.add(new EmpClass("Souza","Design Manager",3));
+
+
+
+
+            Cursor c = db.rawQuery("SELECT * FROM employee", null);
+        StringBuffer buffer = new StringBuffer();
+        while (c.moveToNext())
+        {
+            Log.i("0",c.getString(0));
+            Log.i("1",c.getString(1));
+            Log.i("2",c.getString(2));
+            Log.i("3",c.getString(3));
+            Log.i("4",c.getString(4));
+            Log.i("5",c.getString(5));
+            Log.i("6",c.getString(6));
+            Log.i("7",c.getString(7));
+            Log.i("8",c.getString(8));
+            Log.i("9",c.getString(9));
+            Log.i("10",c.getString(10));
+            Log.i("11",c.getString(11));
+            Log.i("12",c.getString(12));
+            Log.i("13",c.getString(13));
+//            (String name,,designation VARCHAR,int emp_id, String password, int employer,String email,String phone, String joindate,String dob, String interpersonal_skill,String achievements, int rank, int rating, int pay)
+            if(Integer.parseInt(c.getString(4))==-1)
+            employees.add(new EmpClass(c.getString(0),
+                    c.getString(1),
+                    Integer.parseInt(c.getString(2)),
+                    c.getString(3),
+                    Integer.parseInt(c.getString(4)),
+                    c.getString(5),
+                    c.getString(6),
+                    c.getString(7),
+                    c.getString(8),
+                    c.getString(9),
+                    c.getString(10),
+                    Integer.parseInt(c.getString(11)),
+                    Integer.parseInt(c.getString(12)),
+                    Integer.parseInt(c.getString(13))));
+        }
+
         RVAdapter adapter = new RVAdapter(employees);
         adapter.setOnItemClickListener(this);
         rv.setAdapter(adapter);
@@ -85,8 +136,8 @@ public class Employees extends AppCompatActivity implements MyItemClickListener 
             //Start Employee Profile Activity Here
 
             Toast.makeText(this, bean.name, Toast.LENGTH_SHORT).show();
-
             Intent i = new Intent(Employees.this,appraisalRating.class);
+            i.putExtra("regempid",String.valueOf(bean.empNo));
             startActivity(i);
         }
     }

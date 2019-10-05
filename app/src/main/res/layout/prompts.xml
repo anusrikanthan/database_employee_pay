@@ -10,7 +10,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Appraisal for employee "
+        android:text="Enter Appraisal for employee (1-10)"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
