@@ -58,6 +58,7 @@
             />
 
         <ImageView
+            android:id="@+id/editemp"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
@@ -67,6 +68,27 @@
             android:onClick="edit"
             android:scaleType="centerInside"
             android:src="@drawable/ic_edit_black_24dp"></ImageView>
+        <ImageView
+            android:id="@+id/createproj"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="25dp"
+            android:adjustViewBounds="true"
+            android:layout_toLeftOf="@+id/editemp"
+            android:onClick="createproj"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_create_new_folder_black_24dp"></ImageView>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="25dp"
+            android:layout_toLeftOf="@+id/createproj"
+            android:adjustViewBounds="true"
+            android:onClick="viewproj"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_description_black_24dp"></ImageView>
 
     </RelativeLayout>
 

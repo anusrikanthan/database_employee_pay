@@ -1136,6 +1136,7 @@ id editText
 id editText2
 id editTextDialogUserInput
 id edit_query
+id editemp
 id email
 id empno
 id end
@@ -1379,6 +1380,9 @@ layout activity_employee_edit
 layout activity_employee_profile
 layout activity_employees
 layout activity_main
+layout activity_project_profile
+layout activity_project_register
+layout activity_projects
 layout activity_register
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

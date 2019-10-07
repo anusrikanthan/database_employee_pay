@@ -96,22 +96,27 @@ public class appraisalRating extends AppCompatActivity {
                                 // edit text
 //                                result.setText(userInput.getText());
                                 appr = userInput.getText().toString();
-                                if(Integer.parseInt(appr)<11) {
-                                    Toast.makeText(appraisalRating.this, appr, Toast.LENGTH_SHORT).show();
+                                try {
+                                    if(Integer.parseInt(appr)<11) {
+                                        Toast.makeText(appraisalRating.this, appr, Toast.LENGTH_SHORT).show();
 
-                                    Cursor c = db.rawQuery("SELECT * FROM employee WHERE emp_id=" + empNo.getText().toString(), null);
-                                    int ran = 11-Integer.parseInt(appr);
-                                    int pay = 10000*Integer.parseInt(appr);
-                                    db.execSQL("UPDATE employee SET rating='" + appr + "',rank='" + ran +"',pay="+pay);
+                                        Cursor c = db.rawQuery("SELECT * FROM employee WHERE emp_id=" + empNo.getText().toString(), null);
+                                        int ran = 11-Integer.parseInt(appr);
+                                        int pay = 10000*Integer.parseInt(appr);
+                                        db.execSQL("UPDATE employee SET rating='" + appr + "',rank='" + ran +"',pay="+pay);
 
-                                    Intent i = new Intent(appraisalRating.this,appraisalRating.class);
-                                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    i.putExtra("regempid",empNo.getText().toString());
-                                    Toast.makeText(appraisalRating.this, "Appraisal rating successfully updated!", Toast.LENGTH_SHORT).show();
-                                    startActivity(i);
+                                        Intent i = new Intent(appraisalRating.this,appraisalRating.class);
+                                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        i.putExtra("regempid",empNo.getText().toString());
+                                        Toast.makeText(appraisalRating.this, "Appraisal rating successfully updated!", Toast.LENGTH_SHORT).show();
+                                        startActivity(i);
+                                    }
+                                    else {
+                                        Toast.makeText(appraisalRating.this, "Please enter a valid appraisal rating!", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                                else {
-                                    Toast.makeText(appraisalRating.this, "Please enter a valid appraisal rating!", Toast.LENGTH_SHORT).show();
+                                catch (Exception e) {
+                                    Toast.makeText(appraisalRating.this, "Please enter a value for appraisal!", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         })

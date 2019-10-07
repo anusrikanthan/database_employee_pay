@@ -22,6 +22,9 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.example.payapp.project_profile" />
+        <activity android:name="com.example.payapp.ProjectRegister" />
+        <activity android:name="com.example.payapp.Projects" />
         <activity android:name="com.example.payapp.appraisalRating" />
         <activity android:name="com.example.payapp.employeeEdit" />
         <activity android:name="com.example.payapp.employee_profile" />

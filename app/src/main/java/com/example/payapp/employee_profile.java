@@ -87,5 +87,13 @@ public class employee_profile extends AppCompatActivity {
 //        startActivity(getIntent());
 //        overridePendingTransition(0, 0);
     }
+    public void viewproj(View view) {
+        Intent i = new Intent(getApplicationContext(),ProjectRegister.class);
+        startActivity(i);
+    }
+    public void createproj(View view) {
+        Intent i = new Intent(getApplicationContext(),project_profile.class);
+        startActivity(i);
+    }
 
 }
